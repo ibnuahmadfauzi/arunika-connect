@@ -4,8 +4,153 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arunika Connect</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <div class="arunikaconnect-container">
+      <div class="welcome-section">
+        <div>
+          <div class="logo-brand">
+            <img src="images/white-arunika.png" alt="PT. Arunika Saha Vikasa" />
+          </div>
+          <div class="welcome-dialog text-center text-light">
+            <h5>
+              <b>Selamat Datang</b>
+            </h5>
+            <h5>di</h5>
+            <img src="images/text-arunika.png" alt="PT. Arunika Saha Vikasa" />
+          </div>
+          <div class="logo-bu">
+            <img src="images/logo-bu.png" alt="PT. Arunika Saha Vikasa" />
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="header-form-section">
+          <div>
+            <div class="header-logo">
+              <img src="images/logo.png" alt="PT. Arunika Saha Vikasa" />
+            </div>
+            <h1 class="text-center">Arunika Connect</h1>
+          </div>
+        </div>
+        <div class="body-form-section">
+          <div class="card">
+            <div class="card-body">
+              <form action="">
+                <div class="mb-4">
+                  <label for="form-input-nama" class="form-label fw-bold"
+                    >Nama :</label
+                  >
+                  <input
+                    type="text"
+                    id="form-input-nama"
+                    name="form-input-nama"
+                    class="form-control"
+                    placeholder="Nama Lengkap ..."
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="form-input-gender" class="form-label fw-bold"
+                    >Gender :</label
+                  >
+                  <select
+                    name="form-input-gender"
+                    id="form-input-gender"
+                    class="form-control"
+                  >
+                    <option value="">Pilih Gender ...</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="form-input-pekerjaan" class="form-label fw-bold"
+                    >Pekerjaan :</label
+                  >
+                  <input
+                    type="text"
+                    id="form-input-pekerjaan"
+                    name="form-input-pekerjaan"
+                    class="form-control"
+                    placeholder="Karyawan / Pelajar / ..."
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="form-input-alamat" class="form-label fw-bold"
+                    >Alamat :</label
+                  >
+                  <textarea
+                    name="form-input-alamat"
+                    id="form-input-alamat"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Alamat Lengkap ..."
+                  ></textarea>
+                </div>
+                <div class="mb-4">
+                  <label for="form-input-nohp" class="form-label fw-bold"
+                    >No. HP :</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text" id="form-input-nohp"
+                      >+62</span
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="85XXXXXXXXX"
+                      aria-label="No HP"
+                      aria-describedby="form-input-nohp"
+                    />
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label for="form-input-email" class="form-label fw-bold"
+                    >Email :</label
+                  >
+                  <input
+                    type="email"
+                    id="form-input-email"
+                    name="form-input-email"
+                    class="form-control"
+                    placeholder="Email Aktif ..."
+                  />
+                </div>
+                <div class="mb-5">
+                  <label
+                    for="form-input-asalinstansi"
+                    class="form-label fw-bold"
+                    >Asal Instansi / Universitas :</label
+                  >
+                  <input
+                    type="text"
+                    id="form-input-asalinstansi"
+                    name="form-input-asalinstansi"
+                    class="form-control"
+                    placeholder="PT. ... / Universitas ..."
+                  />
+                </div>
+                <div>
+                  <button type="reset" class="btn btn-secondary">Hapus</button>
+                  <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- JS File -->
+    <script src="script.js"></script>
   </body>
 </html>

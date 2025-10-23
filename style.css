@@ -1,0 +1,149 @@
+/* Font */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("woff2");
+}
+
+/* bootstrap style reset */
+
+/*
+===========================
+1. Mobile Size
+===========================
+*/
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+===========================
+2. Tablet Size
+===========================
+*/
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 720px !important;
+  }
+}
+
+/*
+===========================
+3. Small Desktop
+===========================
+*/
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 960px !important;
+  }
+}
+
+/*
+===========================
+4. Large Desktop
+===========================
+*/
+@media (min-width: 1200px) {
+  body {
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
+  }
+
+  .container {
+    max-width: 1140px !important;
+  }
+
+  .arunikaconnect-container {
+    display: flex;
+  }
+
+  .welcome-section {
+    background-color: rgba(1, 44, 99, 0.95);
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(images/bg-brand-1.png), url(images/bg-brand-2.png);
+    background-position: left top, right bottom, left top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 400px, 400px;
+  }
+  .welcome-section .logo-brand {
+    display: flex;
+    justify-content: center;
+  }
+  .welcome-section .logo-brand img {
+    width: 200px;
+  }
+  .welcome-section .welcome-dialog {
+    margin-bottom: 80px;
+    margin-top: 50px;
+  }
+  .welcome-section .welcome-dialog img {
+    width: 270px;
+    margin-top: 20px;
+  }
+  .welcome-section .logo-bu {
+    display: flex;
+    justify-content: center;
+  }
+  .welcome-section .logo-bu img {
+    width: 100px;
+  }
+
+  .form-section {
+    width: 70%;
+    height: 100vh;
+
+    background-image: url(images/atas.png), url(images/bawah.png),
+      url(images/bulat.png);
+    background-position: right top, left bottom, left top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 600px, 500px, 700px;
+    background-position-x: 500px, 0px, -200px;
+  }
+  .form-section .header-form-section {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .header-form-section img {
+    height: 60px;
+  }
+  .form-section .header-form-section .header-logo {
+    display: flex;
+    justify-content: center;
+  }
+  .form-section .header-form-section h1 {
+    margin: 0;
+    font-weight: 600;
+  }
+  .form-section .body-form-section {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .body-form-section .card {
+    width: 95%;
+    height: 95%;
+    background-color: rgba(255, 255, 255, 0.726);
+    border: none;
+  }
+  .form-section .body-form-section .card-body {
+    overflow-y: auto;
+  }
+}

@@ -62,8 +62,11 @@ $(document).ready(function () {
     });
 
     tx.oncomplete = () => {
-      console.log("Data berhasil ditambahkan");
-      tampilkanData();
+      Swal.fire({
+        title: "Terima Kasih",
+        text: "Selamat Datang di Booth PT. Arunika Saha Vikasa",
+        icon: "success",
+      });
     };
 
     // reset input

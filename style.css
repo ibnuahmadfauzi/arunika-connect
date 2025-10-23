@@ -15,6 +15,62 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #373737;
+}
+
+.arunikaconnect-container {
+  display: flex;
+}
+
+.welcome-section {
+  display: none;
+}
+
+.form-section {
+  width: 100%;
+  height: 100vh;
+
+  background-image: url(images/atas.png), url(images/bawah.png),
+    url(images/bulat.png);
+  background-position: right top, left bottom, left top;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 600px, 500px, 700px;
+  background-position-x: 500px, 0px, -200px;
+}
+.form-section .header-form-section {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-section .header-form-section img {
+  height: 40px;
+  margin-bottom: 5px;
+}
+.form-section .header-form-section .header-logo {
+  display: flex;
+  justify-content: center;
+}
+.form-section .header-form-section h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 30px;
+}
+.form-section .body-form-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-section .body-form-section .card {
+  width: 95%;
+  height: 95%;
+  background-color: rgba(255, 255, 255, 0.726);
+  border: none;
+}
+.form-section .body-form-section .card-body {
+  overflow-y: auto;
 }
 
 /* 
@@ -25,10 +81,66 @@ body {
 @media (min-width: 768px) {
   body {
     font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
   }
 
   .container {
     max-width: 720px !important;
+  }
+
+  .arunikaconnect-container {
+    display: flex;
+  }
+
+  .welcome-section {
+    display: none;
+  }
+
+  .form-section {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(images/atas.png), url(images/bawah.png),
+      url(images/bulat.png);
+    background-position: right top, left bottom, left top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 600px, 500px, 700px;
+    background-position-x: 500px, 0px, -200px;
+  }
+  .form-section .header-form-section {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .header-form-section img {
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  .form-section .header-form-section .header-logo {
+    display: flex;
+    justify-content: center;
+  }
+  .form-section .header-form-section h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  .form-section .body-form-section {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .body-form-section .card {
+    width: 95%;
+    height: 95%;
+    background-color: rgba(255, 255, 255, 0.726);
+    border: none;
+  }
+  .form-section .body-form-section .card-body {
+    overflow-y: auto;
   }
 }
 
@@ -40,10 +152,96 @@ body {
 @media (min-width: 992px) {
   body {
     font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
   }
 
   .container {
     max-width: 960px !important;
+  }
+
+  .arunikaconnect-container {
+    display: flex;
+  }
+
+  .welcome-section {
+    background-color: rgba(1, 44, 99, 0.95);
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(images/bg-brand-1.png), url(images/bg-brand-2.png);
+    background-position: left top, right bottom, left top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 400px, 400px;
+  }
+  .welcome-section .logo-brand {
+    display: flex;
+    justify-content: center;
+  }
+  .welcome-section .logo-brand img {
+    width: 150px;
+  }
+  .welcome-section .welcome-dialog {
+    margin-bottom: 80px;
+    margin-top: 50px;
+  }
+  .welcome-section .welcome-dialog img {
+    width: 210px;
+    margin-top: 20px;
+  }
+  .welcome-section .logo-bu {
+    display: flex;
+    justify-content: center;
+  }
+  .welcome-section .logo-bu img {
+    width: 100px;
+  }
+
+  .form-section {
+    width: 70%;
+    height: 100vh;
+
+    background-image: url(images/atas.png), url(images/bawah.png),
+      url(images/bulat.png);
+    background-position: right top, left bottom, left top;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 600px, 500px, 700px;
+    background-position-x: 500px, 0px, -200px;
+  }
+  .form-section .header-form-section {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .header-form-section img {
+    height: 60px;
+  }
+  .form-section .header-form-section .header-logo {
+    display: flex;
+    justify-content: center;
+  }
+  .form-section .header-form-section h1 {
+    margin: 0;
+    font-weight: 600;
+  }
+  .form-section .body-form-section {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section .body-form-section .card {
+    width: 95%;
+    height: 95%;
+    background-color: rgba(255, 255, 255, 0.726);
+    border: none;
+  }
+  .form-section .body-form-section .card-body {
+    overflow-y: auto;
   }
 }
 

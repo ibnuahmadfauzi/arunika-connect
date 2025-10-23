@@ -42,15 +42,15 @@
         <div class="body-form-section">
           <div class="card">
             <div class="card-body">
-              <form action="">
+              <form id="guest-form">
                 <div class="mb-4">
-                  <label for="form-input-nama" class="form-label fw-bold"
+                  <label for="form-input-name" class="form-label fw-bold"
                     >Nama :</label
                   >
                   <input
                     type="text"
-                    id="form-input-nama"
-                    name="form-input-nama"
+                    id="form-input-name"
+                    name="form-input-name"
                     class="form-control"
                     placeholder="Nama Lengkap ..."
                   />
@@ -70,43 +70,42 @@
                   </select>
                 </div>
                 <div class="mb-4">
-                  <label for="form-input-pekerjaan" class="form-label fw-bold"
+                  <label for="form-input-job" class="form-label fw-bold"
                     >Pekerjaan :</label
                   >
                   <input
                     type="text"
-                    id="form-input-pekerjaan"
-                    name="form-input-pekerjaan"
+                    id="form-input-job"
+                    name="form-input-job"
                     class="form-control"
                     placeholder="Karyawan / Pelajar / ..."
                   />
                 </div>
                 <div class="mb-4">
-                  <label for="form-input-alamat" class="form-label fw-bold"
+                  <label for="form-input-address" class="form-label fw-bold"
                     >Alamat :</label
                   >
                   <textarea
-                    name="form-input-alamat"
-                    id="form-input-alamat"
+                    name="form-input-address"
+                    id="form-input-address"
                     class="form-control"
                     rows="4"
                     placeholder="Alamat Lengkap ..."
                   ></textarea>
                 </div>
                 <div class="mb-4">
-                  <label for="form-input-nohp" class="form-label fw-bold"
+                  <label for="form-input-phone" class="form-label fw-bold"
                     >No. HP :</label
                   >
                   <div class="input-group">
-                    <span class="input-group-text" id="form-input-nohp"
-                      >+62</span
-                    >
+                    <span class="input-group-text">+62</span>
                     <input
                       type="text"
                       class="form-control"
                       placeholder="85XXXXXXXXX"
                       aria-label="No HP"
-                      aria-describedby="form-input-nohp"
+                      aria-describedby="form-input-phone"
+                      id="form-input-phone"
                     />
                   </div>
                 </div>
@@ -123,15 +122,13 @@
                   />
                 </div>
                 <div class="mb-5">
-                  <label
-                    for="form-input-asalinstansi"
-                    class="form-label fw-bold"
+                  <label for="form-input-instansi" class="form-label fw-bold"
                     >Asal Instansi / Universitas :</label
                   >
                   <input
                     type="text"
-                    id="form-input-asalinstansi"
-                    name="form-input-asalinstansi"
+                    id="form-input-instansi"
+                    name="form-input-instansi"
                     class="form-control"
                     placeholder="PT. ... / Universitas ..."
                   />
@@ -149,6 +146,9 @@
 
     <!-- Bootstrap JS -->
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery File -->
+    <script src="jquery/jquery-3.7.1.slim.min.js"></script>
 
     <!-- JS File -->
     <script src="script.js"></script>

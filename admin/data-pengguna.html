@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <title>Arunika Connect - Driving Growth Together for a Better Future</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="sweetalert/sweetalert2.min.css" />
+
+    <!-- DataTable -->
+    <link rel="stylesheet" href="datatable/datatables.min.css" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-light">
+    <div class="admin-container">
+      <div class="sidebar">
+        <div class="avatar">
+          <img src="images/avatar.png" alt="PT. Arunika Saha Vikasa" />
+        </div>
+        <div class="profil">
+          <div class="text-center">
+            <span class="fs-6"> ID : ARK38320 </span>
+            <br />
+            <span class="fs-4 fw-bold">administrator</span>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="list-group">
+            <a href="index.html" class="text-decoration-none">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action"
+              >
+                Beranda
+              </button>
+            </a>
+            <a href="data-pengunjung.html" class="text-decoration-none">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action"
+              >
+                Data Pengunjung
+              </button>
+            </a>
+            <a href="data-pengguna.html" class="text-decoration-none">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action"
+              >
+                Data Pengguna
+              </button>
+            </a>
+            <a href="pengaturan-umum.html" class="text-decoration-none">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action"
+              >
+                Pengaturan Umum
+              </button>
+            </a>
+          </div>
+          <div class="list-group mt-4">
+            <a href="#" class="text-decoration-none">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action bg-danger text-light"
+              >
+                Keluar
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="fw-bold mb-5">Data Pengguna</h3>
+            <div>
+              <button class="btn btn-sm btn-primary">Buak Akun</button>
+            </div>
+            <div class="table-responsive">
+              <table id="user-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>#</th>
+                  </tr>
+                </thead>
+                <tbody id="guest-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="sweetalert/sweetalert2.all.min.js"></script>
+
+    <!-- DataTable -->
+    <script src="datatable/datatables.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        let db;
+        let dataTable; // simpan instance DataTable
+
+        // buka IndexedDB versi 2 (pastikan versi terbaru)
+        const request = indexedDB.open("ArunikaconnectDB", 2);
+
+        request.onupgradeneeded = function (event) {
+          db = event.target.result;
+
+          if (!db.objectStoreNames.contains("user")) {
+            db.createObjectStore("user", {
+              keyPath: "id",
+              autoIncrement: true,
+            });
+          }
+        };
+
+        request.onsuccess = function (event) {
+          db = event.target.result;
+          console.log("✅ Database siap digunakan");
+
+          // Inisialisasi DataTable
+          dataTable = $("#user-table").DataTable({
+            data: [],
+            columns: [
+              { data: "id" },
+              { data: "fullname" },
+              { data: "username" },
+              {
+                data: "id",
+                render: function (data) {
+                  return `<button class="btn btn-sm btn-secondary text-light">Ganti Password</button>`;
+                },
+              },
+            ],
+            initComplete: function () {
+              tampilkanData();
+            },
+          });
+
+          // Setelah DB siap, tampilkan data
+          tampilkanData();
+        };
+
+        request.onerror = function (event) {
+          console.error("❌ Gagal membuka database", event.target.error);
+        };
+
+        // Fungsi menampilkan data dari IndexedDB ke DataTables
+        function tampilkanData() {
+          const tx = db.transaction("user", "readonly");
+          const store = tx.objectStore("user");
+
+          const data = [];
+          let nomorUrut = 1;
+
+          store.openCursor().onsuccess = function (event) {
+            const cursor = event.target.result;
+            if (cursor) {
+              data.push({
+                no: nomorUrut++, // Nomor urut manual
+                id: cursor.value.id,
+                fullname: cursor.value.fullname,
+                username: cursor.value.username,
+              });
+              cursor.continue();
+            } else {
+              // update tabel dengan data baru
+              dataTable.clear();
+              dataTable.rows.add(data);
+              dataTable.draw();
+              console.log(
+                "✅ Data ditampilkan di DataTables dengan nomor urut"
+              );
+            }
+          };
+        }
+      });
+    </script>
+  </body>
+</html>

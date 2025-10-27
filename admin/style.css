@@ -1,0 +1,87 @@
+/* Font */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("woff2");
+}
+
+/* bootstrap style reset */
+
+/*
+===========================
+1. Mobile Size
+===========================
+*/
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #373737;
+}
+
+/* 
+===========================
+2. Tablet Size
+===========================
+*/
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
+  }
+}
+
+/*
+===========================
+3. Small Desktop
+===========================
+*/
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
+  }
+}
+
+/*
+===========================
+4. Large Desktop
+===========================
+*/
+@media (min-width: 1200px) {
+  body {
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+    color: #373737;
+  }
+
+  .admin-container {
+    display: flex;
+  }
+  .admin-container .sidebar {
+    width: 30%;
+  }
+  .admin-container .sidebar .avatar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .admin-container .sidebar .avatar img {
+    height: 150px;
+  }
+  .admin-container .sidebar .menu {
+    margin-top: 30px;
+    padding: 0 50px;
+    font-size: 14px;
+  }
+  .admin-container .main {
+    width: 70%;
+    padding: 20px;
+  }
+
+  #guest-table {
+    font-size: 14px;
+  }
+}

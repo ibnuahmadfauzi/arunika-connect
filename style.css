@@ -283,14 +283,14 @@ body {
     justify-content: center;
   }
   .welcome-section .logo-brand img {
-    width: 300px;
+    width: 200px;
   }
   .welcome-section .welcome-dialog {
-    margin-bottom: 200px;
-    margin-top: 150px;
+    margin-bottom: 80px;
+    margin-top: 50px;
   }
   .welcome-section .welcome-dialog img {
-    width: 400px;
+    width: 270px;
     margin-top: 20px;
   }
   .welcome-section .logo-bu {
@@ -298,7 +298,7 @@ body {
     justify-content: center;
   }
   .welcome-section .logo-bu img {
-    width: 200px;
+    width: 100px;
   }
 
   .form-section {
@@ -309,7 +309,7 @@ body {
       url(images/bulat.png);
     background-position: right top, left bottom, left top;
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 1000px, 500px, 700px;
+    background-size: 600px, 500px, 700px;
     background-position-x: 500px, 0px, -200px;
   }
   .form-section .header-form-section {
@@ -319,7 +319,7 @@ body {
     align-items: center;
   }
   .form-section .header-form-section img {
-    height: 100px;
+    height: 60px;
   }
   .form-section .header-form-section .header-logo {
     display: flex;
@@ -328,14 +328,12 @@ body {
   .form-section .header-form-section h1 {
     margin: 0;
     font-weight: 600;
-    font-size: 70px;
   }
   .form-section .body-form-section {
     height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
   }
   .form-section .body-form-section .card {
     width: 95%;

@@ -17,6 +17,9 @@
 
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- SheetJS -->
+    <script src="sheetjs/xlsx.full.min.js"></script>
   </head>
   <body class="bg-light">
     <div class="main mt-5 container">
@@ -24,11 +27,11 @@
         <div class="card-body">
           <h3 class="fw-bold mb-5">Data Pengunjung</h3>
           <div>
-            <button class="btn btn-sm btn-success text-light me-1">
+            <button
+              id="export-excel"
+              class="btn btn-sm btn-success text-light me-1"
+            >
               Download Excel
-            </button>
-            <button class="btn btn-sm btn-danger text-light">
-              Download PDF
             </button>
           </div>
           <div class="table-responsive">
@@ -156,5 +159,7 @@
         });
       });
     </script>
+
+    <script src="script.js"></script>
   </body>
 </html>

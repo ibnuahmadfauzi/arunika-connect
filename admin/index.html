@@ -94,7 +94,7 @@
           dataTable = $("#guest-table").DataTable({
             data: [],
             columns: [
-              { data: "no" }, // dari nomor urut
+              { data: "no" }, // dari nomoi",r urut
               { data: "name" },
               { data: "gender" },
               { data: "job" },
@@ -104,7 +104,7 @@
               {
                 data: "id",
                 render: function (data) {
-                  return `<button class="btn btn-sm btn-danger btn-hapus-pengunjung">Hapus</button>`;
+                  return `<button class="btn btn-sm btn-danger hapusdata-btn" data-id="${data}">Hapus</button>`;
                 },
               },
             ],
@@ -121,6 +121,39 @@
           console.error("❌ Gagal membuka database", event.target.error);
         };
 
+        $(document).on("click", ".hapusdata-btn", function () {
+          Swal.fire({
+            title: "Hapus",
+            text: "lanjutkan menghapus data ?",
+            showCancelButton: true,
+            confirmButtonText: "Hapus",
+            denyButtonText: `Batal`,
+            icon: "warning",
+          }).then((result) => {
+            const id = $(this).data("id");
+            const transaction = db.transaction(["guest"], "readwrite");
+            const objectStore = transaction.objectStore("guest");
+            const request = objectStore.delete(id);
+
+            request.onsuccess = function () {
+              tampilkanData(); // refresh tabel
+            };
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Berhasil",
+                text: "data pengunjung berhasil dihapus",
+                icon: "success",
+              });
+            } else if (result.isDenied) {
+              Swal.fire({
+                title: "Gagal",
+                text: "data pengunjung gagal dihapus",
+                icon: "warning",
+              });
+            }
+          });
+        });
+
         // Fungsi menampilkan data dari IndexedDB ke DataTables
         function tampilkanData() {
           const tx = db.transaction("guest", "readonly");
@@ -133,7 +166,8 @@
             const cursor = event.target.result;
             if (cursor) {
               data.push({
-                no: nomorUrut++, // Nomor urut manual
+                no: nomorUrut++, // nomor urut manual
+                id: cursor.key, // ambil keyPath "id" dari IndexedDB
                 name: cursor.value.name,
                 gender: cursor.value.gender,
                 job: cursor.value.job,
@@ -147,16 +181,13 @@
               dataTable.clear();
               dataTable.rows.add(data);
               dataTable.draw();
+
               console.log(
-                "✅ Data ditampilkan di DataTables dengan nomor urut"
+                "✅ Data ditampilkan di DataTables dengan nomor urut dan ID"
               );
             }
           };
         }
-
-        $(document).ready(".btn-hapus-pengunjung", "click", function () {
-          alert("tes");
-        });
       });
     </script>
 

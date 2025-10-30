@@ -344,4 +344,18 @@ body {
   .form-section .body-form-section .card-body {
     overflow-y: auto;
   }
+
+  .dashboard-btn {
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+    background-color: rgba(1, 44, 99, 0.95);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 1px 0px 15px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 0px 15px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 0px 15px -3px rgba(0, 0, 0, 0.75);
+  }
 }

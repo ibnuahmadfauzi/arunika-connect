@@ -22,7 +22,11 @@ async function exportToExcel() {
     const data = await getAllGuests();
 
     if (!data || data.length === 0) {
-      alert("Tidak ada data guest di IndexedDB!");
+      Swal.fire({
+        title: "Gagal Export",
+        text: "tidak ada data pengunjung yang tersedia",
+        icon: "warning",
+      });
       return;
     }
 
